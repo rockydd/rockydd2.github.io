@@ -5,17 +5,69 @@
   </head>
   <body>
     <style>
-      #main{
+      .main{
         width: 100%;
+        position: absolute;
       }
       #avatar{
+        position: relative;
+        margin: auto;
         border-radius: 100%;
         box-shadow: 0 1px 2px rgba(0,0,0,0.4);
         border: 3px solid #FFF;
       }
+      [data-icon]:before {
+        font-family: icons; /* BYO icon font, mapped smartly */
+        content: attr(data-icon);
+        speak: none; /* Not to be trusted, but hey. */
+      }
+
+      @-webkit-keyframes slide_down{
+        from{ top: 0px; }
+        to{ top: 300px; }
+      }
+
+      .moving{
+        -webkit-animation: slide_down 5s infinite linear alternate;
+      }
     </style>
-    <div class='main center' >
-      <img id='avatar' src="https://www.gravatar.com/avatar/e4b41b1064c209793175d6a39838bd7b?s=128&d=identicon&r=PG"/>
+    <div id='container'>
+      <header>
+        <h3>
+          <span aria-hidden="true" data-icon="&#x21dd;"></span>
+        Stats
+        </h3>
+      </header>
+      <div class='main center' >
+        <img id='avatar' class='moving' src="https://www.gravatar.com/avatar/e4b41b1064c209793175d6a39838bd7b?s=128&d=identicon&r=PG"/>
+      </div>
+      <nav>
+        <ul>
+          <li>Coder</li>
+          <li><img alt='coder'></li>
+          <li>Since 2000</li>
+        </ul>
+        <ul>
+          <li>Developer</li>
+          <li><img alt='Developer'></li>
+          <li>Since 2004</li>
+        </ul>
+        <ul>
+          <li>Programmer</li>
+          <li><img alt='Programmer'></li>
+          <li>Since 2005</li>
+        </ul>
+        <ul>
+          <li>Father</li>
+          <li><img alt='Father'></li>
+          <li>Since 2008</li>
+        </ul>
+        <ul>
+          <li>Coder</li>
+          <li><img alt='Coder'></li>
+          <li>Forever</li>
+        </ul>
+      </nav>
     </div>
   </body>
 
